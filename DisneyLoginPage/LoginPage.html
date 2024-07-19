@@ -83,6 +83,23 @@
             background-color: #3d738c;
             color: whitesmoke;
         }
+         @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            input[type="text"], input[type="password"] {
+                font-size: 0.8em;
+            }
+            .mickey-button {
+                font-size: 0.8em;
+                padding: 6px 12px;
+                max-width: 160px;
+            }
+            .mickey-button::before, .mickey-button::after {
+                width: 20px;
+                height: 20px;
+                top: -10px;
+            }
     </style>
 </head>
 <body>
