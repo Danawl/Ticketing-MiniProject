@@ -1,0 +1,105 @@
+  /* Universal Reset */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf4f4;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7ecde;
+    padding: 10px;
+    box-shadow: 3px 3px 10px 3px #646464;
+}
+
+.navbar a {
+    color: #000000;
+    text-decoration: none;
+    padding: 14px 20px;
+}
+
+.navbar a:hover {
+    background-color: #5596b3;
+    border-radius: 5px;
+    color: white;
+}
+
+.navbar .logo img {
+    height: 80px;
+    width: auto;
+    margin-left: 40px;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 10px;
+    margin-right: 110px;
+}
+
+.navbar a.active {
+    background-color: #5596b3;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Profile Card */
+.profile-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-card img {
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.profile-card .edit-icon {
+    cursor: pointer;
+    color: #5596b3;
+}
+
+.profile-card .edit-icon:hover {
+    color: #3d738c;
+}
+
+.profile-card input {
+    display: none;
+    width: 80%;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.profile-card .save-btn, .profile-card .cancel-btn {
+    display: none;
+    margin: 10px 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #5596b3;
+    color: #ffffff;
+    padding: 18px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+}
