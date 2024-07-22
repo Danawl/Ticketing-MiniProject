@@ -18,27 +18,36 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">Ticket</a>
                 <a href="services.html">Service</a>
-                <a href="contact.html" class ="active">Account</a>
+                <a href="contact.html" class="active">Account</a>
             </div>
         </nav>
     </header>
     <main>
-        <div class="profile-card">
-            <img src="https://via.placeholder.com/150" alt="Profile Picture">
-            <h2 id="profile-name"></h2>
-            <p id="profile-email"></p>
+        <div class="content-container">
+            <div class="profile-card">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture">
+                <h2 id="profile-name"></h2>
+                <p id="profile-email"></p>
 
-            <p><strong>Username:</strong> <span id="profile-username"></span> <span class="edit-icon" onclick="editField('username')">✏️</span></p>
-            <input type="text" id="username-input">
+                <p><strong>Username:</strong> <span id="profile-username"></span> <span class="edit-icon" onclick="editField('username')">✏️</span></p>
+                <input type="text" id="username-input">
 
-            <p><strong>Address:</strong> <span id="profile-address"></span> <span class="edit-icon" onclick="editField('address')">✏️</span></p>
-            <input type="text" id="address-input">
+                <p><strong>Address:</strong> <span id="profile-address"></span> <span class="edit-icon" onclick="editField('address')">✏️</span></p>
+                <input type="text" id="address-input">
 
-            <p><strong>Date Of Birth:</strong> <span id="profile-dob"></span> <span class="edit-icon" onclick="editField('dob')">✏️</span></p>
-            <input type="date" id="dob-input">
+                <p><strong>Date Of Birth:</strong> <span id="profile-dob"></span> <span class="edit-icon" onclick="editField('dob')">✏️</span></p>
+                <input type="date" id="dob-input">
 
-            <button class="save-btn" onclick="saveProfile()">Save</button>
-            <button class="cancel-btn" onclick="cancelEdit()">Cancel</button>
+                <button class="save-btn" onclick="saveProfile()">Save</button>
+                <button class="cancel-btn" onclick="cancelEdit()">Cancel</button>
+            </div>
+            <div class="transaction-summary">
+                <h2>Transaction History</h2>
+                <div id="transactions-list">
+                    <!-- Example Transactions -->
+                </div>
+                <button class="add-transaction-btn" onclick="addExampleTransaction()">Add Example Transaction</button>
+            </div>
         </div>
     </main>
     <footer>
@@ -94,6 +103,28 @@
 
             document.querySelector('.save-btn').style.display = 'none';
             document.querySelector('.cancel-btn').style.display = 'none';
+        }
+
+        function addExampleTransaction() {
+            const transactionsList = document.getElementById('transactions-list');
+            const transactionItem = document.createElement('div');
+            transactionItem.classList.add('summary-item');
+            transactionItem.innerHTML = `
+                <h3>Transaction #${transactionsList.children.length + 1}</h3>
+                <p><strong>Theme Park Ticket Type:</strong> </p>
+                <p><strong>Food Coupon:</strong> </p>
+                <p><strong>Merch Coupon:</strong> </p>
+                <p><strong>Merch:</strong> </p>
+                <p><strong>Total Price:</strong> </p>
+                <p><strong>Discounted Price:</strong> </p>
+                <button class="remove-transaction-btn" onclick="removeTransaction(this)">Remove</button>
+            `;
+            transactionsList.appendChild(transactionItem);
+        }
+
+        function removeTransaction(button) {
+            const transactionItem = button.parentElement;
+            transactionItem.remove();
         }
     </script>
 </body>
